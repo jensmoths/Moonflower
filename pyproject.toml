@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moonflower-game"
+version = "0.1.0"
+description = "Turn-based terminal puzzle for AI agents that learn from gameplay"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+[project.scripts]
+moonflower = "moonflower:main"
+
+[tool.setuptools]
+py-modules = ["moonflower"]
