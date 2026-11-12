@@ -10,8 +10,10 @@ Can an unchanged language model become a better player when it reviews its own g
 
 - Facilitator: run `python -m unittest discover -s tests -v` and test the game in your shell.
 - Put the game on the participant's `PATH` (or provide a command wrapper). If using `python moonflower.py`, provide that command without asking the agent to open the file.
+- Run `python workshop/setup_player.py ../moonflower-player-team1` (adjust per team); enter the resulting directory before starting `copilot`. The helper creates `.github/skills/moonflower-player/SKILL.md`.
 - Ensure each team has its own `MOONFLOWER_HOME` and an independent, writable `SKILL.md` copy.
 - Give the player only terminal action permissions. Keep implementation and facilitator notes out of its normal context.
+- Verify skill discovery with `/skills list` or `/skills info moonflower-player`. Reload with `/skills reload` if needed.
 - Freeze the evaluation seed list. Never use evaluation boards for practice or instruction updates.
 
 ### 0–10 minutes: first contact
