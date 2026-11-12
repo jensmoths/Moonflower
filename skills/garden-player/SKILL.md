@@ -1,6 +1,6 @@
 ---
 name: moonflower-player
-summary: Learn a turn-based terminal puzzle through direct play and reflection.
+description: Play Moonflower in the terminal, infer unknown game rules through moves and replay, and improve strategy through evidence-backed reflection between games.
 ---
 
 # Moonflower Player — version 0
