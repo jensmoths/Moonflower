@@ -62,6 +62,17 @@ An invalid move exits with code `2` and does not consume a turn. The session dir
 
 See [the 60-minute workshop](workshop/WORKSHOP.md) and [starter agent skill](skills/garden-player/SKILL.md). The learning artifact is a `SKILL.md` maintained by the agent, **not a program or bot that plays the game**.
 
+Prepare a **separate player workspace** so Copilot can discover its skill without opening the game source:
+
+```bash
+# Run from this repository after installing the game with: python -m pip install .
+python workshop/setup_player.py ../moonflower-player
+cd ../moonflower-player
+copilot
+```
+
+The helper installs a project skill at `.github/skills/moonflower-player/SKILL.md` and creates `START_HERE.md` with the gameplay prompt. In Copilot CLI, use `/skills list` or `/skills info moonflower-player` to verify discovery; use `/skills reload` if you change the file during an active session. The player should not inspect or modify installed game code. [Copilot skill setup documentation](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills).
+
 1. Run practice puzzles with only the CLI game screen.
 2. After each run, inspect the replay and write down observed effects, exceptions, and tactics.
 3. Revise `SKILL.md` with testable, general rules.
@@ -82,6 +93,7 @@ python -m unittest discover -s tests -v
 - `tests/` — determinism, mechanics, persistence, and CLI checks
 - `skills/garden-player/SKILL.md` — intentionally minimal agent instructions
 - `workshop/WORKSHOP.md` — facilitator timeline and participant prompt
+- `workshop/setup_player.py` — creates an isolated player working directory and Copilot skill
 - `workshop/FACILITATOR.md` — spoiler rules, fairness, evaluation guidance
 
 MIT licensed. No telemetry, accounts, downloads, or network access.
